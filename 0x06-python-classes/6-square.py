@@ -1,22 +1,28 @@
 #!/usr/bin/python3
+"""Square class to represent a square"""
 
 
 class Square():
+    """square class with it's size and proper validation"""
 
     def __init__(self, size=0, position=(0, 0)):
+        """"Initialize data"""
         self.size = size
         self.position = position
 
     @property
     def size(self):
+        """"get size"""
         return self.__size
 
     @property
     def position(self):
+        """"get position"""
         return self.__position
 
     @size.setter
     def size(self, value):
+        """"set size"""
         if (type(value) is not int):
             raise TypeError("size must be an integer")
         elif (value < 0):
@@ -26,6 +32,7 @@ class Square():
 
     @position.setter
     def position(self, value):
+        """"set position"""
         if (type(value) is not tuple):
             raise TypeError("position must be a tuple of 2 positive integers")
         elif (len(value) != 2):
@@ -38,9 +45,11 @@ class Square():
             self.__position = value
 
     def area(self):
+        """"get area of the square"""
         return self.size ** 2
 
     def my_print(self):
+        """print the square"""
         if self.size == 0:
             print()
         else:
