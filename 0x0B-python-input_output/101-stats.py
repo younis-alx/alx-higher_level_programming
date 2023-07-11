@@ -10,4 +10,4 @@ prints the following statistics:
 
 
 def print_stats(size, status_codes):
-       raise
+    raise
