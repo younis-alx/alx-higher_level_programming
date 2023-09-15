@@ -28,6 +28,10 @@ Base = declarative_base()
 
 
 class State(Base):
+    """
+    State class that inherit from declarative_base to provide \
+    all mapping capabilities
+    """
     __tablename__ = 'states'
 
     id = Column(
