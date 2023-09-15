@@ -20,11 +20,12 @@ WARNING: all classes who inherit from Base must be imported \
     before calling Base.metadata.create_all(engine)
 
 """
-from sqlalchemy import Column, Integer, String, create_engine
+from sqlalchemy import Column, Integer, String, MetaData
 from sqlalchemy.ext.declarative import declarative_base
 
 
 Base = declarative_base()
+mymetadata = MetaData()
 
 
 class State(Base):
