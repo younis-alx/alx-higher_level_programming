@@ -31,6 +31,12 @@ class State(Base):
     """
     State class that inherit from declarative_base to provide \
     all mapping capabilities
+    class attribute id that represents a column
+     of an auto-generated, unique integer, can't
+      be null and is a primary key
+    class attribute name that represents a column
+     of a string with maximum 128 characters and
+      can't be null
     """
     __tablename__ = 'states'
 
