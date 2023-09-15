@@ -1,28 +1,9 @@
+#!/usr/bin/python3
 """
-Write a python file that contains the class definition\
-    of a State and an instance \
-        Base = declarative_base():
-
-State class:
-inherits from Base Tips
-links to the MySQL table states
-class attribute id that \
-    represents a column of an auto-generated, \
-    unique integer, \
-        can’t be null and is a primary key
-class attribute name that represents a column of a string \
-    with maximum 128 characters \
-        and can’t be null
-You must use the module SQLAlchemy
-Your script should connect to a MySQL server \
-    running on localhost at port 3306
-WARNING: all classes who inherit from Base must be imported \
-    before calling Base.metadata.create_all(engine)
-
+Contains State class and Base, an instance of declarative_base()
 """
 from sqlalchemy import Column, Integer, String, MetaData
 from sqlalchemy.ext.declarative import declarative_base
-
 
 mymetadata = MetaData()
 Base = declarative_base(metadata=mymetadata)
@@ -30,23 +11,8 @@ Base = declarative_base(metadata=mymetadata)
 
 class State(Base):
     """
-    State class that inherit from declarative_base to provide \
-    all mapping capabilities
-    class attribute id that represents a column
-     of an auto-generated, unique integer, can't
-      be null and is a primary key
-    class attribute name that represents a column
-     of a string with maximum 128 characters and
-      can't be null
+    Class with id and name attributes of each state
     """
     __tablename__ = 'states'
-
-    id = Column(
-        Integer,
-        primary_key=True,
-        autoincrement=True,
-        nullable=False)
-
-    name = Column(
-        String(128),
-        nullable=False)
+    id = Column(Integer, unique=True, nullable=False, primary_key=True)
+    name = Column(String(128), nullable=False)
