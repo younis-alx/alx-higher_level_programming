@@ -14,4 +14,5 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     [print(f'{i.name}: ({j.id}) {j.name}')
-     for i, j in session.query(State, City).join(City, City.state_id == State.id)]
+     for i, j in session.query(State, City)
+        .join(City, City.state_id == State.id)]
