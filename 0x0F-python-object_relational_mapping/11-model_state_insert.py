@@ -12,12 +12,6 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    # try:
-    #     res = session.query(State).order_by(
-    #         State.id).filter(State.name == argv[4]).one()
-    #     print(res.id)
-    # except Exception:
-    #     print("Not found")
     loui = State(name="Louisiana")
     session.add(loui)
     session.commit()
