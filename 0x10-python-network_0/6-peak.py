@@ -5,6 +5,7 @@ finds the peak in a list of unsorted int
 
 
 def find_peak(list_of_integers):
+    """ Returns a peak of unsort int using binary search """
     if not list_of_integers:
         return None
 
