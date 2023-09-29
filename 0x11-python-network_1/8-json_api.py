@@ -7,8 +7,8 @@ import requests
 
 
 if __name__ == "__main__":
-    l = "" if len(argv) == 1 else argv[1]
-    p = {"q": l}
+    msg = "" if len(argv) == 1 else argv[1]
+    p = {"q": msg}
 
     r = requests.post("http://0.0.0.0:5000/search_user", data=p)
     try:
